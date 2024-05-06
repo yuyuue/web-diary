@@ -35,3 +35,6 @@ Thumbs.db
 # OS generated files
 ehthumbs.db
 Icon?
+
+# SQLite
+*.db
