@@ -27,13 +27,23 @@ function App() {
       <div>
         <textarea className="form-control mb-2" placeholder="何か書いてください..."
           value={content} onChange={e => setContent(e.target.value)} rows="3"></textarea>
-        <button className="btn btn-primary" onClick={addEntry}>エントリを追加</button>
+        <button className="btn btn-primary" onClick={addEntry}>日記を追加</button>
       </div>
-      <ul className="list-group mt-3">
+      {/* <ul className="list-group mt-3">
         {entries.map(entry => (
           <li key={entry.id} className="list-group-item">{entry.content}</li>
         ))}
-      </ul>
+      </ul> */}
+      <div>
+        {entries.map(entry => (
+          <div key={entry.id} className="card mt-2">
+            <div className="card-body">
+              <h5 className="card-title">日時: {entry.created_at}</h5>  {/* 日時をタイトルとして表示 */}
+              <p className="card-text">{entry.content}</p>  {/* 本文を表示 */}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
